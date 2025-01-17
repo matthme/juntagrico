@@ -103,6 +103,8 @@ function map_with_markers(locations, selected) {
     let marker_array = []
     let map = null;
     let positions = locations.filter((location) => location.latitude && location.longitude);
+    // only use locations with coordinates
+    locations = locations.filter(function (location) {return location.latitude && location.longitude})
     if (positions.length > 0) {
         $('#map-container').append('<div id="location-map">')
         map = L.map('location-map');

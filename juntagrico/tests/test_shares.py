@@ -1,6 +1,7 @@
 import datetime
 
 from django.template import Template, Context
+from django.test import tag
 from django.urls import reverse
 
 from . import JuntagricoTestCase
@@ -8,6 +9,7 @@ from ..entity.share import Share
 from ..entity.subs import SubscriptionPart
 
 
+@tag('shares')
 class ShareTests(JuntagricoTestCase):
     fixtures = JuntagricoTestCase.fixtures + ['test/shares']
 
